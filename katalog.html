@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog — Iyaa Studio</title>
+  <meta name="description" content="Semua produk digital: template Canva, ebook, preset, foto dan video stok.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#utama">Lompat ke konten</a>
+
+  <header class="situs-header">
+    <div class="wadah header-isi">
+      <a href="index.html" class="logo">Iyaa<span class="logo-titik">.</span>Studio</a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navUtama">
+        <span class="nav-toggle-garis"></span>
+        <span class="nav-toggle-label">Menu</span>
+      </button>
+
+      <nav class="nav" id="navUtama" aria-label="Navigasi utama">
+        <a href="index.html" class="nav-tautan">Beranda</a>
+        <a href="katalog.html" class="nav-tautan nav-aktif">Katalog</a>
+        <a href="index.html#cara-beli" class="nav-tautan">Cara beli</a>
+        <a href="index.html#kontak" class="nav-tautan">Kontak</a>
+        <a href="https://wa.me/6281234567890" class="tombol tombol-kecil">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="utama">
+
+    <!-- ============ KEPALA HALAMAN ============ -->
+    <section class="halaman-kepala">
+      <div class="wadah">
+        <h1 class="halaman-judul">Katalog</h1>
+        <p class="halaman-teks">Semua file di sini bisa langsung kamu unduh setelah bayar. Saring dulu sesuai yang kamu cari.</p>
+      </div>
+    </section>
+
+    <!-- ============ FILTER ============ -->
+    <section class="bagian bagian-rapat">
+      <div class="wadah">
+
+        <div class="saring" role="group" aria-label="Saring produk berdasarkan jenis">
+          <button class="saring-tombol saring-aktif" data-saring="semua" aria-pressed="true">Semua</button>
+          <button class="saring-tombol" data-saring="template" aria-pressed="false">Template</button>
+          <button class="saring-tombol" data-saring="ebook" aria-pressed="false">Ebook</button>
+          <button class="saring-tombol" data-saring="preset" aria-pressed="false">Preset</button>
+          <button class="saring-tombol" data-saring="foto" aria-pressed="false">Foto</button>
+          <button class="saring-tombol" data-saring="video" aria-pressed="false">Video</button>
+        </div>
+
+        <p class="saring-hitung" id="saringHitung" aria-live="polite">Menampilkan 9 produk</p>
+
+        <!-- ============ DAFTAR PRODUK ============ -->
+        <div class="produk-kisi" id="daftarProduk">
+
+          <article class="produk" data-kategori="template">
+            <a href="produk.html" class="produk-tautan">
+              <div class="produk-gambar gambar-a">
+                <span class="produk-tipe">Canva</span>
+              </div>
+              <h2 class="produk-nama">Template Feed Instagram “Tanah Liat”</h2>
+            </a>
+            <p class="produk-catatan">18 slide, warna hangat, siap edit</p>
+            <p class="produk-harga">Rp 49.000</p>
+          </article>
+
+          <article class="produk" data-kategori="ebook">
+            <a href="produk.html" class="produk-tautan">
+              <div class="produk-gambar gambar-b">
+                <span class="produk-tipe">PDF</span>
+              </div>
+              <h2 class="produk-nama">Mulai Freelance Cuma dari HP</h2>
+            </a>
+            <p class="produk-catatan">Ebook 62 halaman + checklist</p>
+            <p class="produk-harga">Rp 35.000</p>
+          </article>
+
+          <article class="produk" data-kategori="preset">
+            <a href="produk.html" class="produk-tautan">
+              <div class="produk-gambar gambar-c">
+                <span class="produk-tipe">Preset</span>
+              </div>
+              <h2 class="produk-nama">Preset Lightroom “Sore Jawa”</h2>
+            </a>
+            <p class="produk-catatan">10 preset, untuk mobile &amp; desktop</p>
+            <p class="produk-harga">Rp 39.000</p>
+          </article>
+
+          <article class="produk" data-kategori="template">
+            <a href="produk.html" class="produk-tautan">
+              <div class="produk-gambar gambar-d">
+                <span class="produk-tipe">HTML</span>
+              </div>
+              <h2 class="produk-nama">Undangan Digital Website</h2>
+            </a>
+            <p class="produk-catatan">Sudah termasuk pemasangan domain</p>
+            <p class="produk-harga">Rp 149.000</p>
+          </article>
+
+          <article class="produk" data-kategori="foto">
+            <a href="produk.html" class="produk-tautan">
+              <div class="produk-gambar gambar-e">
+                <span class="produk-tipe">JPG</span>
+              </div>
+              <h2 class="produk-nama">Paket Foto Stok “Pasar Pagi”</h2>
+            </a>
+            <p class="produk-catatan">30 foto resolusi tinggi</p>
+            <p class="produk-harga">Rp 75.000</p>
+          </article>
+
+          <article class="produk" data-kategori="template">
+            <a href="produk.html" class="produk-tautan">
+              <div class="produk-gambar gambar-f">
+                <span class="produk-tipe">Canva</span>
+              </div>
+              <h2 class="produk-nama">Template CV &amp; Portofolio</h2>
+            </a>
+            <p class="produk-catatan">6 layout, versi terang dan gelap</p>
+            <p class="produk-harga">Rp 29.000</p>
+          </article>
+
+          <article class="produk" data-kategori="video">
+            <a href="produk.html" class="produk-tautan">
+              <div class="produk-gambar gambar-g">
+                <span class="produk-tipe">MP4</span>
+              </div>
+              <h2 class="produk-nama">Video Stok “Kota Hujan”</h2>
+            </a>
+            <p class="produk-catatan">12 klip vertikal, 4K</p>
+            <p class="produk-harga">Rp 89.000</p>
+          </article>
+
+          <article class="produk" data-kategori="ebook">
+            <a href="produk.html" class="produk-tautan">
+              <div class="produk-gambar gambar-h">
+                <span class="produk-tipe">PDF</span>
+              </div>
+              <h2 class="produk-nama">Panduan Canva untuk Pemula</h2>
+            </a>
+            <p class="produk-catatan">40 halaman, banyak gambar langkah</p>
+            <p class="produk-harga">Rp 45.000</p>
+          </article>
+
+          <article class="produk" data-kategori="template">
+            <a href="produk.html" class="produk-tautan">
+              <div class="produk-gambar gambar-i">
+                <span class="produk-tipe">Canva</span>
+              </div>
+              <h2 class="produk-nama">Cover Story &amp; Reels</h2>
+            </a>
+            <p class="produk-catatan">24 cover, 3 gaya berbeda</p>
+            <p class="produk-harga">Rp 39.000</p>
+          </article>
+
+        </div>
+
+        <!-- Muncul kalau hasil saringan kosong -->
+        <p class="kosong" id="kosong" hidden>Belum ada produk di jenis ini. Coba pilih jenis lain.</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="situs-footer">
+    <div class="wadah footer-isi">
+      <p class="footer-logo">Iyaa<span class="logo-titik">.</span>Studio</p>
+      <nav class="footer-nav" aria-label="Navigasi footer">
+        <a href="katalog.html">Katalog</a>
+        <a href="index.html#cara-beli">Cara beli</a>
+        <a href="https://wa.me/6288975027545">WhatsApp</a>
+        <a href="https://www.instagram.com/iyaastudiooo?stkn=MWNoOGJzY2Y5dmVoMQ%3D%3D&utm_source=qr">Instagram</a>
+      </nav>
+      <p class="footer-hak">© 2026 Iyaa Studio</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
