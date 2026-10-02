@@ -37,15 +37,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function jalankanSaringan(pilihan) {
       var terlihat = 0;
+      var segera = 0;
 
       semuaProduk.forEach(function (kartu) {
         var cocok = (pilihan === "semua") || (kartu.dataset.kategori === pilihan);
         kartu.classList.toggle("produk-sembunyi", !cocok);
-        if (cocok) { terlihat++; }
+        if (cocok) {
+          terlihat++;
+          if (kartu.classList.contains("produk-segera")) { segera++; }
+        }
       });
 
       if (teksHitung) {
-        teksHitung.textContent = "Menampilkan " + terlihat + " produk";
+        var teks = "Menampilkan " + terlihat + " produk";
+        if (segera > 0) {
+          teks += " (" + (terlihat - segera) + " siap dibeli, " + segera + " segera hadir)";
+        }
+        teksHitung.textContent = teks;
       }
       if (pesanKosong) {
         pesanKosong.hidden = (terlihat > 0);
