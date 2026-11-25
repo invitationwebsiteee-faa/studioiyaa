@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Undangan Digital Website — Iyaa Studio</title>
-  <meta name="description" content="Undangan digital berbentuk link website untuk pernikahan, khitan, ulang tahun, dan acara. Kamu kirim datanya, aku yang buatkan sampai jadi. Bonus template undangan Canva.">
+  <meta name="description" content="Undangan digital berbentuk link website untuk pernikahan dan acara. Kamu kirim datanya, aku yang buatkan sampai jadi. Bonus template undangan Canva.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -27,10 +27,9 @@
 
       <nav class="nav" id="navUtama" aria-label="Navigasi utama">
         <a href="index.html" class="nav-tautan">Beranda</a>
-        <a href="katalog.html" class="nav-tautan">Katalog</a>
-        <a href="index.html#cara-beli" class="nav-tautan">Cara beli</a>
-        <a href="index.html#kontak" class="nav-tautan">Kontak</a>
-        <a href="https://wa.me/6288975027545" class="tombol tombol-kecil">WhatsApp</a>
+        <a href="katalog.html" class="nav-tautan nav-aktif">Katalog</a>
+        <a href="jasa.html" class="nav-tautan">Jasa</a>
+        <a href="#kontak" class="nav-tautan">Kontak</a>
       </nav>
     </div>
   </header>
@@ -38,67 +37,49 @@
   <main id="utama">
 
     <div class="wadah">
-      <nav class="remah" aria-label="Jejak halaman">
-        <a href="index.html">Beranda</a>
-        <span class="remah-pisah">/</span>
-        <a href="katalog.html">Katalog</a>
-        <span class="remah-pisah">/</span>
-        <span class="remah-kini">Undangan Digital Website</span>
-      </nav>
+      <a href="katalog.html" class="kembali">← Kembali ke katalog</a>
     </div>
 
     <!-- ============ DETAIL PRODUK ============ -->
     <section class="bagian bagian-rapat">
       <div class="wadah detail">
 
-        <!-- Kolom kiri: pratinjau -->
-        <div class="pratinjau">
-          <div class="pratinjau-utama" id="pratinjauUtama">
-            <img src="asset/undangan-1.jpg" alt="Undangan digital website tampil di layar HP: cover, mempelai, dan acara">
-            <span class="produk-tipe">Website</span>
+        <!-- Galeri: geser gambarnya langsung (jari, trackpad, atau tarik dengan mouse) -->
+        <div class="galeri" data-galeri>
+          <div class="galeri-jalur" tabindex="0" role="region" aria-label="Galeri gambar produk, geser ke kiri atau kanan">
+            <div class="galeri-slide"><img src="asset/undangan-1.jpg" alt="Undangan digital website tampil di layar HP: cover, mempelai, dan acara"></div>
+            <div class="galeri-slide"><img src="asset/undangan-2.jpg" alt="Bagian mempelai dengan foto berbingkai lengkung" loading="lazy"></div>
+            <div class="galeri-slide"><img src="asset/undangan-3.jpg" alt="Kartu akad nikah dan resepsi" loading="lazy"></div>
+            <div class="galeri-slide"><img src="asset/undangan-4.jpg" alt="Formulir dan daftar ucapan dan doa" loading="lazy"></div>
           </div>
-
-          <div class="pratinjau-mini" role="group" aria-label="Pilih gambar pratinjau">
-            <button class="mini mini-aktif" data-mini aria-label="Cover, mempelai, dan acara">
-              <img src="asset/undangan-1.jpg" alt="Undangan digital website tampil di layar HP: cover, mempelai, dan acara">
-            </button>
-            <button class="mini" data-mini aria-label="Bagian mempelai">
-              <img src="asset/undangan-2.jpg" alt="Bagian mempelai dengan foto berbingkai lengkung">
-            </button>
-            <button class="mini" data-mini aria-label="Bagian acara">
-              <img src="asset/undangan-3.jpg" alt="Kartu akad nikah dan resepsi">
-            </button>
-            <button class="mini" data-mini aria-label="Ucapan dan doa">
-              <img src="asset/undangan-4.jpg" alt="Formulir dan daftar ucapan dan doa">
-            </button>
-          </div>
+          <button class="galeri-panah galeri-prev" aria-label="Gambar sebelumnya" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+          <button class="galeri-panah galeri-next" aria-label="Gambar berikutnya"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+          <div class="galeri-titik"><button class="titik titik-aktif" aria-label="Gambar 1: cover, mempelai, dan acara"></button><button class="titik" aria-label="Gambar 2: bagian mempelai"></button><button class="titik" aria-label="Gambar 3: bagian acara"></button><button class="titik" aria-label="Gambar 4: ucapan dan doa"></button></div>
         </div>
 
         <!-- Kolom kanan: informasi & tombol beli -->
         <div class="detail-info">
           <h1 class="detail-judul">Undangan Digital Website</h1>
           <p class="detail-harga-ket">Harga per undangan, tergantung jenis acara.</p>
-
           <p class="detail-teks">
-            Undangan digital berbentuk website untuk pernikahan, khitan, ulang tahun,
-            dan acara. Kamu cukup kirim datanya, aku yang buatkan sampai jadi,
-            lalu kamu terima link undangannya untuk langsung dibagikan ke tamu.
-            Bonus template undangan Canva.
+            Undangan digital berbentuk website. Kamu cukup kirim datanya, aku yang
+            buatkan sampai jadi, lalu kamu terima link undangannya untuk langsung
+            dibagikan ke tamu. Bonus template undangan Canva.
           </p>
 
-<div class="isi-paket">
-            <h2 class="isi-judul">Pilih jenis acaranya</h2>
-            <ul class="jenis-daftar">
+          <h2 class="jenis-judul">Pilih jenis acaranya</h2>
+          <ul class="jenis-daftar">
               <li class="jenis">
                 <div class="jenis-kepala">
                   <p class="jenis-nama">Pernikahan</p>
                   <p class="jenis-harga">Rp 70.000</p>
                 </div>
-                <p class="jenis-ket">Cover, profil mempelai, acara, ucapan dan doa</p>
+                <p class="jenis-ket">Cover, profil mempelai, acara, ucapan dan doa. Ada 2 pilihan tema, lihat demonya dulu.</p>
                 <div class="jenis-aksi">
                   <!-- GANTI href dengan link checkout Pernikahan dari Mayar / Lynk.id -->
-                  <a href="http://lynk.id/iyakamuhh/4qvvdkwkgoyg" class="tombol tombol-kecil">Beli sekarang</a>
-                  <a href="https://invitationwebsiteee-faa.github.io/demo/" class="jenis-tombol" target="_blank" rel="noopener">Lihat demo</a>
+                  <a href="https://lynk.id/username/undangan-pernikahan" class="tombol tombol-kecil">Beli sekarang</a>
+                  <a href="https://invitationwebsiteee-faa.github.io/demo/" class="jenis-tombol" target="_blank" rel="noopener">Demo tema klasik</a>
+                  <a href="https://invitationwebsiteee-faa.github.io/pinkwedding/" class="jenis-tombol" target="_blank" rel="noopener">Demo tema pink</a>
                 </div>
               </li>
               <li class="jenis jenis-segera">
@@ -122,58 +103,30 @@
                 </div>
                 <p class="jenis-ket">Undangan acara kumpul-kumpul</p>
               </li>
-            </ul>
-            <p class="detail-catatan">Pembayaran lewat QRIS, e-wallet, atau transfer bank. Setelah bayar, kirim data undanganmu lewat WhatsApp.</p>
-          </div>
+          </ul>
+          <p class="detail-catatan">Pembayaran lewat QRIS, e-wallet, atau transfer bank. Setelah bayar, kirim data undanganmu lewat WhatsApp.</p>
 
-          <div class="isi-paket">
-            <h2 class="isi-judul">Yang kamu dapat</h2>
-            <ul class="isi-daftar">
-              <li>Undangan website yang sudah jadi, tinggal kamu bagikan lewat link</li>
-              <li>Nama tamu bisa muncul di cover untuk tiap link yang dibagikan</li>
-              <li>Bonus: template undangan Canva</li>
-            </ul>
-          </div>
-
-          <div class="isi-paket">
-            <h2 class="isi-judul">Contoh isi (undangan pernikahan)</h2>
-            <ul class="isi-daftar">
-              <li>Cover dengan nama mempelai, tanggal, dan nama tamu</li>
-              <li>Ayat atau kutipan pembuka</li>
-              <li>Foto dan profil mempelai beserta orang tua</li>
-              <li>Kartu akad dan resepsi, lengkap dengan tombol Lihat Lokasi</li>
-              <li>Kolom ucapan dan doa dari tamu</li>
-              <li>Musik latar (opsional)</li>
-              <li>Tampilan dirancang untuk dibuka di HP</li>
-            </ul>
-          </div>
-
-          <div class="isi-paket">
-            <h2 class="isi-judul">Cara pesannya</h2>
-            <ol class="isi-daftar">
-              <li>Pilih jenis acara, klik <strong>Beli sekarang</strong>, lalu selesaikan pembayaran.</li>
-              <li>Kirim data undanganmu lewat <a href="https://wa.me/6288975027545" class="tautan-teks">WhatsApp</a>.</li>
-              <li>Undangan dikerjakan, lalu link jadinya dikirim ke kamu.</li>
-            </ol>
-          </div>
-
-          <div class="isi-paket">
-            <h2 class="isi-judul">Data yang perlu kamu kirim</h2>
-            <ul class="isi-daftar">
-              <li>Nama yang berhajat (mempelai, anak yang dikhitan, atau yang berulang tahun) dan nama orang tua</li>
-              <li>Tanggal, jam, dan lokasi acara (boleh sertakan link Google Maps)</li>
-              <li>Foto utama dan foto untuk cover</li>
-              <li>Ayat atau kutipan, kalau ada yang ingin dipakai</li>
-              <li>Lagu pilihan, kalau ingin ada musik</li>
-            </ul>
-          </div>
-
-          <div class="lisensi">
-            <h2 class="isi-judul">Aturan pakai</h2>
-            <p class="lisensi-teks">
-              Satu pembelian untuk satu undangan. Template Canva bonus tidak
-              boleh dijual ulang atau dibagikan sebagai file mentah.
-            </p>
+          <div class="lipat-kelompok">
+            <details class="lipat" open>
+              <summary class="lipat-judul">Yang kamu dapat</summary>
+              <div class="lipat-isi"><ul class="isi-daftar"><li>Undangan website yang sudah jadi, tinggal kamu bagikan lewat link</li><li>Nama tamu bisa muncul di cover untuk tiap link yang dibagikan</li><li>Bonus: template undangan Canva</li></ul></div>
+            </details>
+            <details class="lipat">
+              <summary class="lipat-judul">Contoh isi (undangan pernikahan)</summary>
+              <div class="lipat-isi"><ul class="isi-daftar"><li>Cover dengan nama mempelai, tanggal, dan nama tamu</li><li>Ayat atau kutipan pembuka</li><li>Foto dan profil mempelai beserta orang tua</li><li>Kartu akad dan resepsi, lengkap dengan tombol Lihat Lokasi</li><li>Kolom ucapan dan doa dari tamu</li><li>Musik latar (opsional)</li><li>Tema pink: kisah kami, hitung mundur, galeri foto, dan kolom kirim kado</li><li>Tampilan dirancang untuk dibuka di HP</li></ul></div>
+            </details>
+            <details class="lipat">
+              <summary class="lipat-judul">Cara pesannya</summary>
+              <div class="lipat-isi"><ol class="isi-daftar"><li>Pilih jenis acara, klik <strong>Beli sekarang</strong>, lalu selesaikan pembayaran.</li><li>Kirim data undanganmu lewat <a href="https://wa.me/6288975027545" class="tautan-teks">WhatsApp</a>.</li><li>Undangan dikerjakan, lalu link jadinya dikirim ke kamu.</li></ol></div>
+            </details>
+            <details class="lipat">
+              <summary class="lipat-judul">Data yang perlu kamu kirim</summary>
+              <div class="lipat-isi"><ul class="isi-daftar"><li>Nama yang berhajat (mempelai, anak yang dikhitan, atau yang berulang tahun) dan nama orang tua</li><li>Tanggal, jam, dan lokasi acara (boleh sertakan link Google Maps)</li><li>Foto utama dan foto untuk cover</li><li>Ayat atau kutipan, kalau ada yang ingin dipakai</li><li>Lagu pilihan, kalau ingin ada musik</li></ul></div>
+            </details>
+            <details class="lipat">
+              <summary class="lipat-judul">Aturan pakai</summary>
+              <div class="lipat-isi"><p>Satu pembelian untuk satu undangan. Template Canva bonus tidak boleh dijual ulang atau dibagikan sebagai file mentah.</p></div>
+            </details>
           </div>
         </div>
 
@@ -181,16 +134,36 @@
     </section>
 
     <!-- ============ PRODUK LAIN ============ -->
-    <section class="bagian">
+    <section class="bagian bagian-lembut">
       <div class="wadah">
-        <h2 class="bagian-judul">Produk lainnya</h2>
-
+        <h2 class="bagian-judul">Produk <span class="judul-miring">lainnya</span></h2>
         <div class="produk-kisi">
-
+          <article class="produk">
+            <a href="template-archive-moment.html" class="produk-tautan">
+              <div class="produk-gambar">
+                <img src="asset/archive-moment-1.jpg" alt="Template Archive Moment versi postingan dan story, tema pink" loading="lazy">
+                <span class="produk-tipe">Canva</span>
+              </div>
+              <h3 class="produk-nama">Template Canva “Archive Moment”</h3>
+            </a>
+            <p class="produk-catatan">Postingan + story, tema pink</p>
+            <p class="produk-harga">Rp 15.000</p>
+          </article>
+          <article class="produk">
+            <a href="template-ootd.html" class="produk-tautan">
+              <div class="produk-gambar">
+                <img src="asset/ootd-1.jpg" alt="Template Outfit of the Day versi postingan dan story, tema pink" loading="lazy">
+                <span class="produk-tipe">Canva</span>
+              </div>
+              <h3 class="produk-nama">Template Canva “Outfit of the Day”</h3>
+            </a>
+            <p class="produk-catatan">Postingan + story, tema pink</p>
+            <p class="produk-harga">Rp 15.000</p>
+          </article>
           <article class="produk">
             <a href="template-carousel.html" class="produk-tautan">
               <div class="produk-gambar">
-                <img src="asset/scrapbook-4.jpg" alt="Template feed Instagram Carousel, tiga slide menyambung">
+                <img src="asset/scrapbook-4.jpg" alt="Template feed Instagram Carousel, tiga slide menyambung" loading="lazy">
                 <span class="produk-tipe">Canva</span>
               </div>
               <h3 class="produk-nama">Template Feed Instagram “Carousel”</h3>
@@ -198,25 +171,20 @@
             <p class="produk-catatan">3 slide, warna hangat, siap edit</p>
             <p class="produk-harga">Rp 20.000</p>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="produk produk-segera">
-            <div class="produk-gambar gambar-c">
-              <span class="produk-tipe">Preset</span>
-              <span class="produk-kunci"><svg class="produk-kunci-ikon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Segera hadir</span>
-            </div>
-            <h3 class="produk-nama">Preset Lightroom “Sore Jawa”</h3>
-            <p class="produk-harga produk-harga-segera">Segera hadir</p>
-          </article>
-
-          <article class="produk produk-segera">
-            <div class="produk-gambar gambar-h">
-              <span class="produk-tipe">PDF</span>
-              <span class="produk-kunci"><svg class="produk-kunci-ikon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Segera hadir</span>
-            </div>
-            <h3 class="produk-nama">Panduan Canva untuk Pemula</h3>
-            <p class="produk-harga produk-harga-segera">Segera hadir</p>
-          </article>
-
+    <!-- ============ KONTAK ============ -->
+    <section class="kontak" id="kontak">
+      <div class="wadah">
+        <div class="kontak-kotak">
+          <h2 class="kontak-judul">Mau tanya atau <span class="judul-miring">pesan?</span></h2>
+          <p class="kontak-teks">Ceritakan kebutuhanmu lewat chat, nanti aku bantu carikan yang paling pas.</p>
+          <div class="kontak-aksi">
+            <a href="https://wa.me/6288975027545" class="tombol tombol-putih">WhatsApp<span class="kontak-nomor">+62 889 7502 7545</span></a>
+            <a href="https://www.instagram.com/iyaastudiooo" class="tombol tombol-putih">Instagram<span class="kontak-nomor">@iyaastudiooo</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -227,10 +195,11 @@
     <div class="wadah footer-isi">
       <p class="footer-logo">Iyaa<span class="logo-titik">.</span>Studio</p>
       <nav class="footer-nav" aria-label="Navigasi footer">
+        <a href="index.html">Beranda</a>
         <a href="katalog.html">Katalog</a>
-        <a href="index.html#cara-beli">Cara beli</a>
+        <a href="jasa.html">Jasa</a>
         <a href="https://wa.me/6288975027545">WhatsApp</a>
-        <a href="https://www.instagram.com/iyaastudiooo?stkn=MWNoOGJzY2Y5dmVoMQ%3D%3D&utm_source=qr">Instagram</a>
+        <a href="https://www.instagram.com/iyaastudiooo">Instagram</a>
       </nav>
       <p class="footer-hak">© 2026 Iyaa Studio</p>
     </div>

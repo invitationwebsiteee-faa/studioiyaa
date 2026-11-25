@@ -1,6 +1,6 @@
 /* =========================================================
    IYAA STUDIO — script.js
-   Dipakai di ketiga halaman. Setiap bagian dicek dulu
+   Dipakai di semua halaman. Setiap bagian dicek dulu
    keberadaannya, jadi tidak error kalau elemennya tidak ada.
    ========================================================= */
 
@@ -32,44 +32,26 @@ document.addEventListener("DOMContentLoaded", function () {
   if (daftarProduk) {
     var tombolSaring = document.querySelectorAll(".saring-tombol");
     var semuaProduk  = daftarProduk.querySelectorAll(".produk");
-    var teksHitung   = document.getElementById("saringHitung");
     var pesanKosong  = document.getElementById("kosong");
 
     function jalankanSaringan(pilihan) {
       var terlihat = 0;
-      var segera = 0;
-
       semuaProduk.forEach(function (kartu) {
         var cocok = (pilihan === "semua") || (kartu.dataset.kategori === pilihan);
         kartu.classList.toggle("produk-sembunyi", !cocok);
-        if (cocok) {
-          terlihat++;
-          if (kartu.classList.contains("produk-segera")) { segera++; }
-        }
+        if (cocok) { terlihat++; }
       });
-
-      if (teksHitung) {
-        var teks = "Menampilkan " + terlihat + " produk";
-        if (segera > 0) {
-          teks += " (" + (terlihat - segera) + " siap dibeli, " + segera + " segera hadir)";
-        }
-        teksHitung.textContent = teks;
-      }
-      if (pesanKosong) {
-        pesanKosong.hidden = (terlihat > 0);
-      }
+      if (pesanKosong) { pesanKosong.hidden = (terlihat > 0); }
     }
 
     tombolSaring.forEach(function (tombol) {
       tombol.addEventListener("click", function () {
-        // pindahkan status aktif
         tombolSaring.forEach(function (t) {
           t.classList.remove("saring-aktif");
           t.setAttribute("aria-pressed", "false");
         });
         tombol.classList.add("saring-aktif");
         tombol.setAttribute("aria-pressed", "true");
-
         jalankanSaringan(tombol.dataset.saring);
       });
     });
@@ -83,42 +65,80 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* ============ 3. PRATINJAU DI HALAMAN PRODUK ============ */
-  var pratinjauUtama = document.getElementById("pratinjauUtama");
-  var tombolMini     = document.querySelectorAll("[data-mini]");
+  /* ============ 3. GALERI PRODUK (geser langsung) ============
+     Gambar besar bisa digeser dengan jari (HP), trackpad, ditarik
+     dengan mouse, atau pakai panah dan titik di bawahnya.       */
+  var galeri = document.querySelector("[data-galeri]");
 
-  if (pratinjauUtama && tombolMini.length > 0) {
-    tombolMini.forEach(function (mini) {
-      mini.addEventListener("click", function () {
-        // tandai mini yang sedang dipilih
-        tombolMini.forEach(function (m) { m.classList.remove("mini-aktif"); });
-        mini.classList.add("mini-aktif");
+  if (galeri) {
+    var jalur   = galeri.querySelector(".galeri-jalur");
+    var slide   = galeri.querySelectorAll(".galeri-slide");
+    var titik   = galeri.querySelectorAll(".titik");
+    var tombolPrev = galeri.querySelector(".galeri-prev");
+    var tombolNext = galeri.querySelector(".galeri-next");
+    var jumlah  = slide.length;
 
-        // salin gambar dari mini ke kotak besar
-        var gambarMini = mini.querySelector("img");
+    function indeksKini() {
+      return Math.round(jalur.scrollLeft / jalur.clientWidth);
+    }
 
-        if (gambarMini) {
-          // sudah pakai foto asli
-          var gambarBesar = pratinjauUtama.querySelector("img");
-          if (gambarBesar) {
-            gambarBesar.src = gambarMini.src;
-            gambarBesar.alt = gambarMini.alt;
-          }
-        } else {
-          // masih pakai kotak warna sementara
-          pratinjauUtama.className = "pratinjau-utama " + warnaDari(mini);
-        }
+    function tandai() {
+      var i = indeksKini();
+      titik.forEach(function (t, n) {
+        t.classList.toggle("titik-aktif", n === i);
+        t.setAttribute("aria-current", n === i ? "true" : "false");
       });
-    });
-  }
+      if (tombolPrev) { tombolPrev.disabled = (i <= 0); }
+      if (tombolNext) { tombolNext.disabled = (i >= jumlah - 1); }
+    }
 
-  // ambil kelas warna (gambar-a, gambar-b, dst.) dari sebuah elemen
-  function warnaDari(elemen) {
-    var hasil = "";
-    elemen.classList.forEach(function (nama) {
-      if (nama.indexOf("gambar-") === 0) { hasil = nama; }
+    function keSlide(i) {
+      i = Math.max(0, Math.min(jumlah - 1, i));
+      jalur.scrollTo({ left: i * jalur.clientWidth, behavior: "smooth" });
+    }
+
+    jalur.addEventListener("scroll", tandai, { passive: true });
+    window.addEventListener("resize", tandai);
+
+    if (tombolPrev) { tombolPrev.addEventListener("click", function () { keSlide(indeksKini() - 1); }); }
+    if (tombolNext) { tombolNext.addEventListener("click", function () { keSlide(indeksKini() + 1); }); }
+    titik.forEach(function (t, n) { t.addEventListener("click", function () { keSlide(n); }); });
+
+    // panah kiri/kanan di keyboard saat galeri difokus
+    jalur.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); keSlide(indeksKini() + 1); }
+      if (e.key === "ArrowLeft")  { e.preventDefault(); keSlide(indeksKini() - 1); }
     });
-    return hasil;
+
+    // tarik dengan mouse (di layar sentuh, browser sudah mengurusnya)
+    var sedangTarik = false, mulaiX = 0, mulaiScroll = 0, mulaiIndeks = 0;
+
+    jalur.addEventListener("pointerdown", function (e) {
+      if (e.pointerType !== "mouse" || e.button !== 0) { return; }
+      sedangTarik = true;
+      mulaiX = e.clientX;
+      mulaiScroll = jalur.scrollLeft;
+      mulaiIndeks = indeksKini();
+      jalur.classList.add("galeri-tarik");
+    });
+
+    window.addEventListener("pointermove", function (e) {
+      if (!sedangTarik) { return; }
+      jalur.scrollLeft = mulaiScroll - (e.clientX - mulaiX);
+    });
+
+    window.addEventListener("pointerup", function (e) {
+      if (!sedangTarik) { return; }
+      sedangTarik = false;
+      var selisih = e.clientX - mulaiX;
+      var tujuan = mulaiIndeks;
+      if (selisih < -50) { tujuan = mulaiIndeks + 1; }
+      else if (selisih > 50) { tujuan = mulaiIndeks - 1; }
+      jalur.classList.remove("galeri-tarik");
+      keSlide(tujuan);
+    });
+
+    tandai();
   }
 
 });

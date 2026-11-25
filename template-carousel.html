@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Template Feed Instagram “Carousel” — Iyaa Studio</title>
-  <meta name="description" content="Template Canva carousel tiga slide bernuansa scrapbook hangat untuk feed Instagram.">
+  <meta name="description" content="Template feed Instagram 3 slide berpalet cokelat dan krem, siap diedit di Canva.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -27,10 +27,9 @@
 
       <nav class="nav" id="navUtama" aria-label="Navigasi utama">
         <a href="index.html" class="nav-tautan">Beranda</a>
-        <a href="katalog.html" class="nav-tautan">Katalog</a>
-        <a href="index.html#cara-beli" class="nav-tautan">Cara beli</a>
-        <a href="index.html#kontak" class="nav-tautan">Kontak</a>
-        <a href="https://wa.me/6288975027545" class="tombol tombol-kecil">WhatsApp</a>
+        <a href="katalog.html" class="nav-tautan nav-aktif">Katalog</a>
+        <a href="jasa.html" class="nav-tautan">Jasa</a>
+        <a href="#kontak" class="nav-tautan">Kontak</a>
       </nav>
     </div>
   </header>
@@ -38,84 +37,52 @@
   <main id="utama">
 
     <div class="wadah">
-      <nav class="remah" aria-label="Jejak halaman">
-        <a href="index.html">Beranda</a>
-        <span class="remah-pisah">/</span>
-        <a href="katalog.html">Katalog</a>
-        <span class="remah-pisah">/</span>
-        <span class="remah-kini">Template Feed “Carousel”</span>
-      </nav>
+      <a href="katalog.html" class="kembali">← Kembali ke katalog</a>
     </div>
 
     <!-- ============ DETAIL PRODUK ============ -->
     <section class="bagian bagian-rapat">
       <div class="wadah detail">
 
-        <!-- Kolom kiri: pratinjau -->
-        <div class="pratinjau">
-          <div class="pratinjau-utama" id="pratinjauUtama">
-            <img src="asset/scrapbook-4.jpg" alt="Template feed Instagram Carousel, tiga slide menyambung">
-            <span class="produk-tipe">Canva</span>
+        <!-- Galeri: geser gambarnya langsung (jari, trackpad, atau tarik dengan mouse) -->
+        <div class="galeri" data-galeri>
+          <div class="galeri-jalur" tabindex="0" role="region" aria-label="Galeri gambar produk, geser ke kiri atau kanan">
+            <div class="galeri-slide"><img src="asset/scrapbook-4.jpg" alt="Template feed Instagram Carousel, tiga slide menyambung"></div>
+            <div class="galeri-slide"><img src="asset/scrapbook-1.jpg" alt="Slide 1: bingkai polaroid dengan stiker" loading="lazy"></div>
+            <div class="galeri-slide"><img src="asset/scrapbook-2.jpg" alt="Slide 2: bingkai bintang dan kertas sobek" loading="lazy"></div>
+            <div class="galeri-slide"><img src="asset/scrapbook-3.jpg" alt="Slide 3: bintang besar dan kamera" loading="lazy"></div>
           </div>
-
-          <div class="pratinjau-mini" role="group" aria-label="Pilih gambar pratinjau">
-            <button class="mini mini-aktif" data-mini aria-label="Tiga slide menyambung">
-              <img src="asset/scrapbook-4.jpg" alt="Template feed Instagram Carousel, tiga slide menyambung">
-            </button>
-            <button class="mini" data-mini aria-label="Slide 1">
-              <img src="asset/scrapbook-1.jpg" alt="Slide 1: bingkai polaroid dengan stiker">
-            </button>
-            <button class="mini" data-mini aria-label="Slide 2">
-              <img src="asset/scrapbook-2.jpg" alt="Slide 2: bingkai bintang dan kertas sobek">
-            </button>
-            <button class="mini" data-mini aria-label="Slide 3">
-              <img src="asset/scrapbook-3.jpg" alt="Slide 3: bintang besar dan kamera">
-            </button>
-          </div>
+          <button class="galeri-panah galeri-prev" aria-label="Gambar sebelumnya" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+          <button class="galeri-panah galeri-next" aria-label="Gambar berikutnya"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+          <div class="galeri-titik"><button class="titik titik-aktif" aria-label="Gambar 1: tiga slide menyambung"></button><button class="titik" aria-label="Gambar 2: slide 1"></button><button class="titik" aria-label="Gambar 3: slide 2"></button><button class="titik" aria-label="Gambar 4: slide 3"></button></div>
         </div>
 
         <!-- Kolom kanan: informasi & tombol beli -->
         <div class="detail-info">
           <h1 class="detail-judul">Template Feed Instagram “Carousel”</h1>
-          <p class="detail-harga">Rp 10.000</p>
-
+          <p class="detail-harga">Rp 20.000</p>
           <p class="detail-teks">
-            Tiga slide dengan palet cokelat, krem.
-            Cocok untuk akun instagram yang aktif posting kegiatan yang mau
-            tampil hangat dan terlihat eye catching.
+            Tiga slide dengan palet cokelat dan krem. Cocok untuk akun Instagram
+            yang aktif memposting kegiatan dan ingin tampil hangat serta eye catching.
           </p>
 
           <!-- GANTI href dengan link checkout dari Mayar / Lynk.id -->
-          <a href="http://lynk.id/iyakamuhh/87ggvyqk4m57" class="tombol tombol-lebar">Beli sekarang</a>
+          <a href="https://lynk.id/username/carousel" class="tombol tombol-lebar">Beli sekarang</a>
           <p class="detail-catatan">Pembayaran lewat QRIS, e-wallet, atau transfer bank. File dikirim otomatis ke emailmu.</p>
 
-          <div class="isi-paket">
-            <h2 class="isi-judul">Yang kamu dapat</h2>
-            <ul class="isi-daftar">
-              <li>3 slide ukuran 1080 × 1350 px</li>
-              <li>1 cover Story sebagai bonus</li>
-              <li>Link template Canva, bisa diedit selamanya</li>
-              <li>Panduan ganti warna dan font (PDF)</li>
-              <li>Daftar font gratis yang dipakai</li>
-            </ul>
-          </div>
-
-          <div class="isi-paket">
-            <h2 class="isi-judul">Cocok untuk</h2>
-            <ul class="isi-daftar">
-              <li>Akun Pribadi</li>
-              <li>Selebgram</li>
-              <li>Konten Creator</li>
-            </ul>
-          </div>
-
-          <div class="lisensi">
-            <h2 class="isi-judul">Aturan pakai</h2>
-            <p class="lisensi-teks">
-              Boleh dipakai untuk akun sendiri maupun akun klien, termasuk untuk
-              pekerjaan berbayar. Tidak boleh dijual ulang atau dibagikan sebagai
-              file mentah.
-            </p>
+          <div class="lipat-kelompok">
+            <details class="lipat" open>
+              <summary class="lipat-judul">Yang kamu dapat</summary>
+              <div class="lipat-isi"><ul class="isi-daftar"><li>3 slide ukuran 1080 × 1350 px</li><li>1 cover Story sebagai bonus</li><li>Link template Canva, bisa diedit selamanya</li><li>Panduan ganti warna dan font (PDF)</li><li>Daftar font gratis yang dipakai</li></ul></div>
+            </details>
+            <details class="lipat">
+              <summary class="lipat-judul">Cocok untuk</summary>
+              <div class="lipat-isi"><ul class="isi-daftar"><li>Akun pribadi</li><li>Selebgram</li><li>Konten kreator</li></ul></div>
+            </details>
+            <details class="lipat">
+              <summary class="lipat-judul">Aturan pakai</summary>
+              <div class="lipat-isi"><p>Boleh dipakai untuk akun sendiri maupun akun klien, termasuk untuk pekerjaan berbayar. Tidak boleh dijual ulang atau dibagikan sebagai file mentah.</p></div>
+            </details>
           </div>
         </div>
 
@@ -123,44 +90,57 @@
     </section>
 
     <!-- ============ PRODUK LAIN ============ -->
-    <section class="bagian">
+    <section class="bagian bagian-lembut">
       <div class="wadah">
-        <h2 class="bagian-judul">Produk lainnya</h2>
-
+        <h2 class="bagian-judul">Produk <span class="judul-miring">lainnya</span></h2>
         <div class="produk-kisi">
-
           <article class="produk">
             <a href="template-undangan.html" class="produk-tautan">
               <div class="produk-gambar">
-                <img src="asset/undangan-1.jpg" alt="Undangan digital website tampil di layar HP">
+                <img src="asset/undangan-1.jpg" alt="Undangan digital website tampil di layar HP" loading="lazy">
                 <span class="produk-tipe">Website</span>
               </div>
               <h3 class="produk-nama">Undangan Digital Website</h3>
             </a>
-            <p class="produk-catatan">Pernikahan, khitan, ulang tahun, acara. Dibuatkan sampai jadi</p>
+            <p class="produk-catatan">2 pilihan tema, dibuatkan sampai jadi lewat link</p>
             <p class="produk-harga">Mulai dari Rp 70.000</p>
           </article>
-
-
-
-          <article class="produk produk-segera">
-            <div class="produk-gambar gambar-c">
-              <span class="produk-tipe">Preset</span>
-              <span class="produk-kunci"><svg class="produk-kunci-ikon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Segera hadir</span>
-            </div>
-            <h3 class="produk-nama">Preset Lightroom “Sore Jawa”</h3>
-            <p class="produk-harga produk-harga-segera">Segera hadir</p>
+          <article class="produk">
+            <a href="template-archive-moment.html" class="produk-tautan">
+              <div class="produk-gambar">
+                <img src="asset/archive-moment-1.jpg" alt="Template Archive Moment versi postingan dan story, tema pink" loading="lazy">
+                <span class="produk-tipe">Canva</span>
+              </div>
+              <h3 class="produk-nama">Template Canva “Archive Moment”</h3>
+            </a>
+            <p class="produk-catatan">Postingan + story, tema pink</p>
+            <p class="produk-harga">Rp 15.000</p>
           </article>
-
-          <article class="produk produk-segera">
-            <div class="produk-gambar gambar-h">
-              <span class="produk-tipe">PDF</span>
-              <span class="produk-kunci"><svg class="produk-kunci-ikon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Segera hadir</span>
-            </div>
-            <h3 class="produk-nama">Panduan Canva untuk Pemula</h3>
-            <p class="produk-harga produk-harga-segera">Segera hadir</p>
+          <article class="produk">
+            <a href="template-ootd.html" class="produk-tautan">
+              <div class="produk-gambar">
+                <img src="asset/ootd-1.jpg" alt="Template Outfit of the Day versi postingan dan story, tema pink" loading="lazy">
+                <span class="produk-tipe">Canva</span>
+              </div>
+              <h3 class="produk-nama">Template Canva “Outfit of the Day”</h3>
+            </a>
+            <p class="produk-catatan">Postingan + story, tema pink</p>
+            <p class="produk-harga">Rp 15.000</p>
           </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- ============ KONTAK ============ -->
+    <section class="kontak" id="kontak">
+      <div class="wadah">
+        <div class="kontak-kotak">
+          <h2 class="kontak-judul">Mau tanya atau <span class="judul-miring">pesan?</span></h2>
+          <p class="kontak-teks">Ceritakan kebutuhanmu lewat chat, nanti aku bantu carikan yang paling pas.</p>
+          <div class="kontak-aksi">
+            <a href="https://wa.me/6288975027545" class="tombol tombol-putih">WhatsApp<span class="kontak-nomor">+62 889 7502 7545</span></a>
+            <a href="https://www.instagram.com/iyaastudiooo" class="tombol tombol-putih">Instagram<span class="kontak-nomor">@iyaastudiooo</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -171,10 +151,11 @@
     <div class="wadah footer-isi">
       <p class="footer-logo">Iyaa<span class="logo-titik">.</span>Studio</p>
       <nav class="footer-nav" aria-label="Navigasi footer">
+        <a href="index.html">Beranda</a>
         <a href="katalog.html">Katalog</a>
-        <a href="index.html#cara-beli">Cara beli</a>
+        <a href="jasa.html">Jasa</a>
         <a href="https://wa.me/6288975027545">WhatsApp</a>
-        <a href="https://www.instagram.com/iyaastudiooo?stkn=MWNoOGJzY2Y5dmVoMQ%3D%3D&utm_source=qr">Instagram</a>
+        <a href="https://www.instagram.com/iyaastudiooo">Instagram</a>
       </nav>
       <p class="footer-hak">© 2026 Iyaa Studio</p>
     </div>
