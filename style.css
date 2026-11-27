@@ -575,7 +575,7 @@ a.jenis-tombol:hover { background-color: var(--tinta); color: var(--putih); }
   background-color: var(--pink-muda); color: var(--tinta);
   margin-bottom: 0.4rem;
 }
-.jasa:nth-child(2) .jasa-ikon { background-color: var(--mentega); }
+#video .jasa-ikon { background-color: var(--mentega); }
 .jasa-judul { font-size: 1.5rem; }
 .jasa-teks { color: var(--tinta-lembut); }
 .jasa .isi-daftar { margin-top: 0.4rem; color: var(--tinta-lembut); font-size: 0.97rem; }
@@ -656,3 +656,40 @@ a.jasa:hover { transform: translateY(-4px); box-shadow: var(--bayang); }
 .bagian-tanpa-atas { padding-top: 0; }
 
 .bagian-judul + .produk-kisi { margin-top: 1.75rem; }
+
+/* kartu Edit video: teks di kiri, contoh video (rasio 9:16) di kanan */
+.jasa-lebar { grid-column: 1 / -1; }
+.jasa-badan {
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 290px);
+  gap: 2rem 3.5rem;
+  align-items: center;
+}
+.jasa-info { display: flex; flex-direction: column; gap: 0.7rem; align-items: flex-start; }
+.jasa-harga { font-family: var(--font-judul); font-weight: 600; font-size: 1.6rem; color: var(--harga); }
+.jasa-media { margin: 0; width: 100%; justify-self: center; }
+.jasa-media video {
+  display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover;
+  border-radius: var(--lengkung); background-color: var(--pink-muda);
+  box-shadow: var(--bayang);
+}
+.jasa-media figcaption { margin-top: 0.7rem; font-size: 0.85rem; color: var(--tinta-lembut); text-align: center; }
+
+/* kartu ringkasan harga */
+.jasa-ringkas { background-color: var(--mentega-muda); border-color: transparent; justify-content: center; }
+.harga-daftar { margin: 0.25rem 0 0.5rem; display: grid; gap: 0.6rem; }
+.harga-baris {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 0.25rem 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(61, 43, 53, 0.1);
+}
+.harga-baris dt { font-weight: 500; }
+.harga-baris dd { margin: 0; font-weight: 700; color: var(--harga); }
+.harga-baris dd span { font-weight: 500; font-size: 0.85rem; color: var(--tinta-lembut); }
+
+/* label harga di teaser beranda */
+.jasa-label { margin-top: auto; padding-top: 0.5rem; font-weight: 700; font-size: 0.9rem; color: var(--harga); }
+
+@media (max-width: 860px) {
+  .jasa-badan { grid-template-columns: 1fr; }
+  .jasa-media { max-width: 290px; }
+}
